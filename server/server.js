@@ -1,5 +1,6 @@
 import express from "express";
-import "dotenv/config";
+import mongoose from "mongoose";
+import { connectToDB } from "./lib/db.js";
 import workoutRoutes from "./routes/workouts.js";
 
 // express app
@@ -16,9 +17,16 @@ app.use((req, res, next) => {
 // routes
 app.use("/workouts", workoutRoutes);
 
-// listen for requests
+//db connection
 const PORT = 4000;
 
-app.listen(PORT, () => {
-  console.log("listening on port..", PORT);
-});
+connectToDB()
+  .then(() => {
+    // listen to requests ONLY if we are connected with DB
+    app.listen(PORT, () => {
+      console.log("Listening on port..", PORT);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });

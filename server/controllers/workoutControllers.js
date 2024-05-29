@@ -41,13 +41,43 @@ const getAWorkout = async (req, res) => {
 };
 
 // UPDATE a workout
-const updateAWorkout = (req, res) => {
-  res.json({ message: "UPDATE a workout" });
+const updateAWorkout = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Workout ID incorrect" });
+  }
+
+  const workout = await Workout.findOneAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
+
+  if (!workout) {
+    return res.status(400).json({ error: "No such workout" });
+  }
+
+  res.status(200).json(workout);
 };
 
 // DELETE a workout
-const deleteAWorkout = (req, res) => {
-  res.json({ message: "DELETE a workout" });
+const deleteAWorkout = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Workout ID incorrect" });
+  }
+
+  // To find the doc in MongoDB whose _id matches with id
+  const workout = await Workout.findOneAndDelete({ _id: id });
+
+  if (!workout) {
+    return res.status(400).json({ error: "No such workout" });
+  }
+
+  res.status(200).json(workout);
 };
 
 export {

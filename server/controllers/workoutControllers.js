@@ -1,12 +1,16 @@
+import mongoose from "mongoose";
+
 import Workout from "../models/workoutModel.js";
 
 // GET all workouts
-const getWorkouts = (req, res) => {
-  res.json({ message: "GET all workouts" });
+const getWorkouts = async (req, res) => {
+  const workouts = await Workout.find({}).sort({ createdAt: -1 });
+
+  res.status(200).json(workouts);
 };
 
 // CREATE a new workout
-const createWorkout = async (req, res) => {
+const createAWorkout = async (req, res) => {
   const { title, load, reps } = req.body;
 
   // Add a document to workouts collection
@@ -19,8 +23,21 @@ const createWorkout = async (req, res) => {
 };
 
 // GET a workout
-const getAWorkout = (req, res) => {
-  res.json({ message: "GET a single workout" });
+const getAWorkout = async (req, res) => {
+  const { id } = req.params;
+
+  // To check that the id is a valid mongoose id
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "Workout ID incorrect" });
+  }
+
+  const workout = await Workout.findById(id);
+
+  if (!workout) {
+    return res.status(404).json({ Error: "No such Workout is found!" });
+  }
+
+  return res.status(200).json(workout);
 };
 
 // UPDATE a workout
@@ -35,7 +52,7 @@ const deleteAWorkout = (req, res) => {
 
 export {
   getWorkouts,
-  createWorkout,
+  createAWorkout,
   getAWorkout,
   updateAWorkout,
   deleteAWorkout,

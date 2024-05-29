@@ -6,7 +6,9 @@ import workoutRoutes from "./routes/workouts.js";
 // express app
 const app = express();
 
-// middleware
+// middleware - app.use()
+
+// for parsing application/json - Contains key-value pairs of data submitted in the request body
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -17,12 +19,11 @@ app.use((req, res, next) => {
 // routes
 app.use("/workouts", workoutRoutes);
 
-//db connection
+// listen for requests after DB connection is set
 const PORT = 4000;
 
 connectToDB()
   .then(() => {
-    // listen to requests ONLY if we are connected with DB
     app.listen(PORT, () => {
       console.log("Listening on port..", PORT);
     });

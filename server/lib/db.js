@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 // Load environment variables from .env file located in the root folder
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
+//db connection
 export async function connectToDB() {
   try {
     await mongoose.connect(process.env.MONGO_URI);

@@ -8,7 +8,13 @@ import workoutRoutes from "./routes/workouts.js";
 // express app
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://mern-workout-app-ecru.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 // middleware - app.use()
 // for parsing application/json - Contains key-value pairs of data submitted in the request body

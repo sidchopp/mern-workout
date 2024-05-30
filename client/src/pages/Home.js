@@ -4,7 +4,7 @@ import { WorkoutDetails, WorkoutForm } from "../components";
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
   const URL =
-    "http://localhost:4000" || "https://mern-workout-api-eight.vercel.app";
+    "https://mern-workout-api-eight.vercel.app" || "http://localhost:4000";
 
   useEffect(() => {
     const fetchWorkouts = async () => {

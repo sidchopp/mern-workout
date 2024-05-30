@@ -10,7 +10,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://mern-workout-app-ecru.vercel.app"],
+    origin: [
+      "https://mern-workout-app-ecru.vercel.app",
+      "http://localhost:3000",
+    ],
     methods: ["POST", "GET"],
     credentials: true,
   })

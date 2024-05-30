@@ -6,7 +6,9 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("http://localhost:4000/workouts");
+      const response = await fetch(
+        "https://mern-workout-api-eight.vercel.app/workouts"
+      );
       const json = await response.json();
 
       if (response.ok) {

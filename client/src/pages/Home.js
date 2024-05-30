@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { WorkoutDetails, WorkoutForm } from "../components";
+import { useWorkoutsContext } from "../hooks";
 
 const Home = () => {
-  const [workouts, setWorkouts] = useState(null);
+  const { workouts, dispatch } = useWorkoutsContext();
+
   const URL =
     "https://mern-workout-api-eight.vercel.app" || "http://localhost:4000";
 
@@ -15,7 +17,7 @@ const Home = () => {
         const json = await response.json();
 
         if (response.ok) {
-          setWorkouts(json);
+          dispatch({ type: "SET_WORKOUTS", payload: json });
         } else {
           // Handle error response
           console.error("Failed to fetch workouts:", json);
@@ -27,7 +29,7 @@ const Home = () => {
     };
 
     fetchWorkouts();
-  }, []);
+  }, [URL, dispatch]);
 
   return (
     <div className="home">

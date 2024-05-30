@@ -7,7 +7,10 @@ const Home = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch(
-        "https://mern-workout-api-eight.vercel.app/workouts"
+        "https://mern-workout-api-eight.vercel.app/workouts",
+        {
+          credentials: "include",
+        }
       );
       const json = await response.json();
 

@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 const WorkoutDetails = ({ workout }) => {
   return (
     <div className="workout-details">
@@ -10,7 +12,11 @@ const WorkoutDetails = ({ workout }) => {
         <strong>Number of reps: </strong>
         {workout.reps}
       </p>
-      <p>{workout.createdAt}</p>
+      <p>
+        <strong>Created on: </strong>
+        {format(new Date(workout.createdAt), "PP")}
+        {/* {workout.createdAt} */}
+      </p>
     </div>
   );
 };

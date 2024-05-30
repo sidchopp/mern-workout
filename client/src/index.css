@@ -111,11 +111,12 @@ input {
 }
 
 form button {
-  background: var(--primary);
+  background: #989898;
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: "Montserrat";
+  font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -127,4 +128,29 @@ div.error {
   color: var(--error);
   border-radius: 4px;
   margin: 20px 0;
+}
+
+/* Footer */
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.footer a {
+  color: #989898;
+  text-decoration: none;
+}
+
+.footer .year {
+  font-size: 0.8rem;
+}
+
+.footer .projects {
+  margin: 10px 0;
 }

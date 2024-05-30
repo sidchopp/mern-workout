@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { WorkoutDetails, WorkoutForm } from "../components";
 import { useWorkoutsContext } from "../hooks";
+import { Footer } from "../components/Footer";
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext();
@@ -32,15 +33,18 @@ const Home = () => {
   }, [URL, dispatch]);
 
   return (
-    <div className="home">
-      <div className="workouts">
-        {workouts &&
-          workouts.map((workout) => (
-            <WorkoutDetails workout={workout} key={workout._id} />
-          ))}
+    <>
+      <div className="home">
+        <div className="workouts">
+          {workouts &&
+            workouts.map((workout) => (
+              <WorkoutDetails workout={workout} key={workout._id} />
+            ))}
+        </div>
+        <WorkoutForm />
       </div>
-      <WorkoutForm />
-    </div>
+      <Footer />
+    </>
   );
 };
 

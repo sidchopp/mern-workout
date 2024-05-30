@@ -6,16 +6,24 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch(
-        "https://mern-workout-api-eight.vercel.app/workouts",
-        {
-          credentials: "include",
-        }
-      );
-      const json = await response.json();
+      try {
+        const response = await fetch(
+          "https://mern-workout-api-eight.vercel.app/workouts",
+          {
+            credentials: "include", // Include credentials with the request
+          }
+        );
+        const json = await response.json();
 
-      if (response.ok) {
-        setWorkouts(json);
+        if (response.ok) {
+          setWorkouts(json);
+        } else {
+          // Handle error response
+          console.error("Failed to fetch workouts:", json);
+        }
+      } catch (error) {
+        // Handle fetch error
+        console.error("Error fetching workouts:", error);
       }
     };
 

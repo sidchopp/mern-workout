@@ -40,3 +40,5 @@ connectToDB()
   .catch((err) => {
     console.log(err);
   });
+
+export default app; // Export the Express app

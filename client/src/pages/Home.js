@@ -3,16 +3,15 @@ import { WorkoutDetails, WorkoutForm } from "../components";
 
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
+  const URL =
+    "http://localhost:4000" || "https://mern-workout-api-eight.vercel.app";
 
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const response = await fetch(
-          "https://mern-workout-api-eight.vercel.app/workouts",
-          {
-            credentials: "include", // Include credentials with the request
-          }
-        );
+        const response = await fetch(`${URL}/workouts`, {
+          credentials: "include", // Include credentials with the request
+        });
         const json = await response.json();
 
         if (response.ok) {

@@ -44,7 +44,21 @@ header a {
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  gap: 80px;
+}
+
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: 2.5fr 1.5fr;
+    gap: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .workout-details {

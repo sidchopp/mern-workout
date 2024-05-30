@@ -1,3 +1,4 @@
-import Navbar from "./Navbar";
+import { Navbar } from "./Navbar";
+import { WorkoutDetails } from "./WorkoutDetails";
 
-export { Navbar };
+export { Navbar, WorkoutDetails };

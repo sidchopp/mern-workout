@@ -82,15 +82,18 @@ header a {
   color: #555;
 }
 
-.workout-details span {
+.workout-details button {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  background: #f1f1f1;
-  padding: 6px;
-  border-radius: 50%;
-  color: #333;
+    top: 0;
+    right: 0;
+    background: red;
+    color: black;
+    border: none;
+    padding: 12px 8px;
+    text-align: center;
+    line-height: 0;
+    font-size: 0.9em;
+    cursor: pointer;
 }
 
 /* New-workout form */

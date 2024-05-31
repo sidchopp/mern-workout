@@ -16,7 +16,7 @@ const WorkoutForm = () => {
 
     const URL =
       process.env.NODE_ENV === "production"
-        ? process.env.SERVER_API
+        ? process.env.REACT_APP_SERVER_API
         : "http://localhost:4000";
 
     const response = await fetch(`${URL}/workouts`, {

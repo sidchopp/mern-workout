@@ -14,17 +14,19 @@ const WorkoutForm = () => {
 
     const workout = { title, load, reps };
 
-    const response = await fetch(
-      "https://mern-workout-api-eight.vercel.app/workouts",
-      {
-        method: "POST",
-        body: JSON.stringify(workout),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      }
-    );
+    const URL =
+      process.env.NODE_ENV === "production"
+        ? process.env.SERVER_API
+        : "http://localhost:4000";
+
+    const response = await fetch(`${URL}/workouts`, {
+      method: "POST",
+      body: JSON.stringify(workout),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
     const json = await response.json();
 
     if (!response.ok) {

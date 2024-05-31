@@ -7,34 +7,42 @@ const WorkoutDetails = ({ workout }) => {
 
   const handleClick = async () => {
     const URL =
-      "https://mern-workout-api-eight.vercel.app" || "http://localhost:4000";
+      process.env.NODE_ENV === "production"
+        ? process.env.SERVER_API
+        : "http://localhost:4000";
 
-    const response = await fetch(`${URL}/workouts/${workout._id}`, {
-      method: "DELETE",
-      credentials: "include",
-    });
-    const json = await response.json();
+    try {
+      const response = await fetch(`${URL}/workouts/${workout._id}`, {
+        method: "DELETE",
+        credentials: "include",
+      });
+      const json = await response.json();
 
-    if (response.ok) {
-      dispatch({ type: "DELETE_WORKOUT", payload: json });
+      if (response.ok) {
+        dispatch({ type: "DELETE_WORKOUT", payload: json });
+      } else {
+        console.error("Failed to delete the workout");
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
   return (
     <div className="workout-details">
-      <h4>{workout.title}</h4>
+      <h4>{workout?.title}</h4>
       <p>
         <strong>Load (kg): </strong>
-        {workout.load}
+        {workout?.load}
       </p>
       <p>
         <strong>Number of reps: </strong>
-        {workout.reps}
+        {workout?.reps}
       </p>
       <p>
         <strong>Created on: </strong>
-        {format(new Date(workout.createdAt), "PP")}
-        <Dialog handleClick={handleClick} />
+        {format(new Date(workout?.createdAt), "PP")}
+        <Dialog handleClick={handleClick} title={workout.title} />
       </p>
     </div>
   );

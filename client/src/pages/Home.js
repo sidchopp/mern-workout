@@ -7,7 +7,9 @@ const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext();
 
   const URL =
-    "https://mern-workout-api-eight.vercel.app" || "http://localhost:4000";
+    process.env.NODE_ENV === "production"
+      ? process.env.SERVER_API
+      : "http://localhost:4000";
 
   useEffect(() => {
     const fetchWorkouts = async () => {
@@ -38,7 +40,7 @@ const Home = () => {
         <div className="workouts">
           {workouts &&
             workouts.map((workout) => (
-              <WorkoutDetails workout={workout} key={workout._id} />
+              <WorkoutDetails workout={workout} key={workout?._id} />
             ))}
         </div>
         <WorkoutForm />

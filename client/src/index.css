@@ -86,7 +86,7 @@ header a {
   position: absolute;
     top: 0;
     right: 0;
-    background: red;
+    background: var(--error);
     color: black;
     border: none;
     padding: 12px 8px;
@@ -125,12 +125,14 @@ form button {
 }
 
 div.error {
-  padding: 10px;
-  background: #ffefef;
-  border: 1px solid var(--error);
   color: var(--error);
-  border-radius: 4px;
   margin: 20px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input.error {
+  border: 1.5px outset var(--error);
 }
 
 /* Footer */

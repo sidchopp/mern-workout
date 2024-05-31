@@ -14,7 +14,7 @@ app.use(
       "https://mern-workout-app-ecru.vercel.app",
       "http://localhost:3000",
     ],
-    methods: ["POST", "GET"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );

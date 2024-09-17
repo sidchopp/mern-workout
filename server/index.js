@@ -4,6 +4,7 @@ import cors from "cors";
 
 import { connectToDB } from "./lib/db.js";
 import workoutRoutes from "./routes/workouts.js";
+import userRoutes from "./routes/user.js";
 
 // express app
 const app = express();
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use("/workouts", workoutRoutes);
+app.use("/user", userRoutes);
 
 // listen for requests after DB connection is set
 const PORT = 4000;

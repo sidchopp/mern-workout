@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useWorkoutsContext } from "../hooks";
+import { URL } from "../config";
 
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext();
@@ -14,11 +15,6 @@ const WorkoutForm = () => {
     e.preventDefault();
 
     const workout = { title, load, reps };
-
-    const URL =
-      process.env.NODE_ENV === "production"
-        ? process.env.REACT_APP_SERVER_API
-        : "http://localhost:4000";
 
     const response = await fetch(`${URL}/workouts`, {
       method: "POST",

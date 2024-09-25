@@ -2,14 +2,10 @@ import { useEffect } from "react";
 import { WorkoutDetails, WorkoutForm } from "../components";
 import { useWorkoutsContext } from "../hooks";
 import { Footer } from "../components/Footer";
+import { URL } from "../config";
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext();
-
-  const URL =
-    process.env.NODE_ENV === "production"
-      ? process.env.REACT_APP_SERVER_API
-      : "http://localhost:4000";
 
   useEffect(() => {
     const fetchWorkouts = async () => {

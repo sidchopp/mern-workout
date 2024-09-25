@@ -1,5 +1,6 @@
 import { useAuthContext } from "./useAuthContext";
 import { useSignUp } from "./useSignUp";
+import { useLogOut } from "./useLogOut";
 import { useWorkoutsContext } from "./useWorkoutsContext";
 
-export { useAuthContext, useSignUp, useWorkoutsContext };
+export { useAuthContext, useSignUp, useLogOut, useWorkoutsContext };

@@ -51,6 +51,17 @@ nav a {
   margin-left: 10px;
 }
 
+nav button {
+  background: #989898;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 /* auth forms */
 form.signup,
 form.login {
@@ -105,16 +116,16 @@ form.login {
 
 .workout-details button {
   position: absolute;
-    top: 0;
-    right: 0;
-    background: var(--error);
-    color: black;
-    border: none;
-    padding: 12px 8px;
-    text-align: center;
-    line-height: 0;
-    font-size: 0.9em;
-    cursor: pointer;
+  top: 0;
+  right: 0;
+  background: var(--error);
+  color: black;
+  border: none;
+  padding: 12px 8px;
+  text-align: center;
+  line-height: 0;
+  font-size: 0.9em;
+  cursor: pointer;
 }
 
 /* New-workout form */

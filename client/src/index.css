@@ -60,6 +60,7 @@ nav button {
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 /* auth forms */

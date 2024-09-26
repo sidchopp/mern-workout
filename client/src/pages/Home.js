@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { WorkoutDetails, WorkoutForm } from "../components";
 import { useWorkoutsContext, useAuthContext } from "../hooks";
-import { Footer } from "../components/Footer";
 import { URL } from "../config";
 
 const Home = () => {
@@ -37,21 +36,18 @@ const Home = () => {
   }, [dispatch, user]);
 
   return (
-    <>
-      <div className="home">
-        <div className="workouts">
-          {workouts ? (
-            workouts.map((workout) => (
-              <WorkoutDetails workout={workout} key={workout?._id} />
-            ))
-          ) : (
-            <p>Loading Workouts...</p>
-          )}
-        </div>
-        <WorkoutForm />
+    <div className="home">
+      <div className="workouts">
+        {workouts ? (
+          workouts.map((workout) => (
+            <WorkoutDetails workout={workout} key={workout?._id} />
+          ))
+        ) : (
+          <p>Loading Workouts...</p>
+        )}
       </div>
-      <Footer />
-    </>
+      <WorkoutForm />
+    </div>
   );
 };
 

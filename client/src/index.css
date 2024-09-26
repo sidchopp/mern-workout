@@ -40,6 +40,38 @@ header a {
   margin: 0 auto;
 }
 
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 10px;
+}
+
+nav button {
+  background: #989898;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* auth forms */
+form.signup,
+form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  /* background: #668295; */
+  border-radius: 4px;
+}
 /* homepage */
 .home {
   display: grid;
@@ -85,16 +117,16 @@ header a {
 
 .workout-details button {
   position: absolute;
-    top: 0;
-    right: 0;
-    background: var(--error);
-    color: black;
-    border: none;
-    padding: 12px 8px;
-    text-align: center;
-    line-height: 0;
-    font-size: 0.9em;
-    cursor: pointer;
+  top: 0;
+  right: 0;
+  background: var(--error);
+  color: black;
+  border: none;
+  padding: 12px 8px;
+  text-align: center;
+  line-height: 0;
+  font-size: 0.9em;
+  cursor: pointer;
 }
 
 /* New-workout form */

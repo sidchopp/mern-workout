@@ -1,3 +1,9 @@
+import { AuthContext, AuthContextProvider } from "./AuthContext";
 import { WorkoutsContext, WorkoutsContextProvider } from "./WorkoutContext";
 
-export { WorkoutsContext, WorkoutsContextProvider };
+export {
+  AuthContext,
+  AuthContextProvider,
+  WorkoutsContext,
+  WorkoutsContextProvider,
+};

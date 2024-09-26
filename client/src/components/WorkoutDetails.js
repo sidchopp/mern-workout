@@ -1,20 +1,24 @@
 import { format } from "date-fns";
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import { useWorkoutsContext, useAuthContext } from "../hooks";
 import { Dialog } from "./Dialog";
+import { URL } from "../config";
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
+  const { user } = useAuthContext();
 
   const handleClick = async () => {
-    const URL =
-      process.env.NODE_ENV === "production"
-        ? process.env.REACT_APP_SERVER_API
-        : "http://localhost:4000";
+    if (!user) {
+      return;
+    }
 
     try {
       const response = await fetch(`${URL}/workouts/${workout._id}`, {
         method: "DELETE",
         credentials: "include",
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
       });
       const json = await response.json();
 

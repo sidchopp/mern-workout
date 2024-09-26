@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import { WorkoutDetails, WorkoutForm } from "../components";
-import { useWorkoutsContext } from "../hooks";
+import { useWorkoutsContext, useAuthContext } from "../hooks";
 import { Footer } from "../components/Footer";
 import { URL } from "../config";
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
         const response = await fetch(`${URL}/workouts`, {
           credentials: "include", // Include credentials with the request
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
         });
         const json = await response.json();
 
@@ -27,8 +31,10 @@ const Home = () => {
       }
     };
 
-    fetchWorkouts();
-  }, [dispatch]);
+    if (user) {
+      fetchWorkouts();
+    }
+  }, [dispatch, user]);
 
   return (
     <>

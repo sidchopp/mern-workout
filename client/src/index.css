@@ -8,7 +8,7 @@
   --backgroundColor: #36454F;
 }
 
-body {
+body, html {
   background: var(--backgroundColor);
   color: #f1f1f1;
   margin: 0;
@@ -16,12 +16,11 @@ body {
 }
 
 header {
-  background: var(--backgroundColor);
   color: #f1f1f1;
 }
 
 header .container {
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: 0 auto;
   padding: 10px 20px;
   display: flex;
@@ -34,12 +33,16 @@ header a {
   text-decoration: none;
 }
 
-.pages {
-  max-width: 1400px;
+.app {
+  /* max-width: 1400px; */
   padding: 20px;
   margin: 0 auto;
+  background-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),url("../public/images/core.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
 
 /* navbar */
 nav {
@@ -61,6 +64,27 @@ nav button {
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/* Hero */
+.heroText {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.heroText button {
+  background: #989898;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* auth forms */
@@ -171,7 +195,7 @@ input.error {
 /* Footer */
 
 .footer {
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;

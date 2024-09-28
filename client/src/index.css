@@ -28,6 +28,14 @@ header .container {
   justify-content: space-between;
 }
 
+.fitTrack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 2em
+}
+
 header a {
   color: #f1f1f1;
   text-decoration: none;
@@ -52,6 +60,8 @@ nav {
 
 nav a {
   margin-left: 10px;
+  font-weight: bold;
+  font-size: 1.2em
 }
 
 nav button {
@@ -70,10 +80,15 @@ nav button {
 .heroText {
   text-align: center;
   position: absolute;
+  margin-top: 80px;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+.heroText p {
+  margin: 20px 0;
 }
 
 .heroText button {
@@ -85,6 +100,7 @@ nav button {
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 /* auth forms */
@@ -114,6 +130,22 @@ form.login {
   .home {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+.fitTrack,
+  nav a {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .fitTrack, .container,
+  nav a {
+    font-size: .8rem;
+    margin-left: 4px;
+    padding: 1px 
   }
 }
 

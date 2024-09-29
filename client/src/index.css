@@ -47,7 +47,7 @@ header a {
   flex: 1;
   padding: 20px;
   margin: 0 auto;
-  background-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),url("../public/images/core.jpg");
+  background-image: linear-gradient( to bottom,rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 1)),url("../public/images/core.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;

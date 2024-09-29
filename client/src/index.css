@@ -89,21 +89,20 @@ nav button {
 }
 
 /* Hero */
-.heroText {
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  position: absolute;
-  margin-top: 80px;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 60px;
   color: white;
 }
 
-.heroText p {
+.hero p {
   margin: 20px 0;
 }
 
-.heroText button {
+.hero button {
   background: #989898;
   border: 0;
   color: #fff;

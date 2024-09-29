@@ -9,10 +9,11 @@
 }
 
 body, html {
-  background: var(--backgroundColor);
+  background: black;
   color: #f1f1f1;
   margin: 0;
   font-family: "Montserrat";
+  height: 100%;
 }
 
 header {
@@ -22,10 +23,20 @@ header {
 header .container {
   /* max-width: 1400px; */
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.logged-in {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.logged-in span {
+  margin-bottom: 10px;
 }
 
 .fitTrack {
@@ -43,9 +54,10 @@ header a {
 
 .app {
   /* max-width: 1400px; */
+  flex: 1;
   padding: 20px;
   margin: 0 auto;
-  background-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),url("../public/images/core.jpg");
+  background-image: linear-gradient( to bottom,rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 1)),url("../public/images/core.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,36 +129,6 @@ form.login {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 80px;
-}
-
-@media (max-width: 900px) {
-  .home {
-    grid-template-columns: 2.5fr 1.5fr;
-    gap: 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  .home {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 420px) {
-.fitTrack,
-  nav a {
-    font-size: .9rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .fitTrack, .container,
-  nav a {
-    font-size: .8rem;
-    margin-left: 4px;
-    padding: 1px 
-  }
 }
 
 .workout-details {
@@ -227,12 +209,13 @@ input.error {
 /* Footer */
 
 .footer {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 150px;
+  padding: 20px 0;
   font-weight: bold;
 }
 
@@ -247,4 +230,43 @@ input.error {
 
 .footer .projects {
   margin: 10px 0;
+}
+
+/* Media queries */
+
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: 2.5fr 1.5fr;
+    gap: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .logged-in {
+    flex-direction: column;
+  }
+  .logged-in span {
+    margin-bottom: 6px
+  }
+}
+
+@media (max-width: 420px) {
+  .fitTrack,
+  nav a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .fitTrack,
+  .container,
+  nav a {
+    font-size: 1rem;
+    margin-left: 4px;
+    padding: 1px
+  }
 }

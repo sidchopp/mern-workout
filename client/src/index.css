@@ -119,36 +119,6 @@ form.login {
   gap: 80px;
 }
 
-@media (max-width: 900px) {
-  .home {
-    grid-template-columns: 2.5fr 1.5fr;
-    gap: 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  .home {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 420px) {
-.fitTrack,
-  nav a {
-    font-size: .9rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .fitTrack, .container,
-  nav a {
-    font-size: .8rem;
-    margin-left: 4px;
-    padding: 1px 
-  }
-}
-
 .workout-details {
   background: #fff;
   border-radius: 4px;
@@ -247,4 +217,37 @@ input.error {
 
 .footer .projects {
   margin: 10px 0;
+}
+
+/* Media queries */
+
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: 2.5fr 1.5fr;
+    gap: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .fitTrack,
+  nav a {
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .fitTrack,
+  .container,
+  nav a {
+    font-size: .8rem;
+    margin-left: 4px;
+    padding: 1px
+  }
 }

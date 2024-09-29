@@ -9,10 +9,11 @@
 }
 
 body, html {
-  background: var(--backgroundColor);
+  background: black;
   color: #f1f1f1;
   margin: 0;
   font-family: "Montserrat";
+  height: 100%;
 }
 
 header {
@@ -43,6 +44,7 @@ header a {
 
 .app {
   /* max-width: 1400px; */
+  flex: 1;
   padding: 20px;
   margin: 0 auto;
   background-image: linear-gradient( rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)),url("../public/images/core.jpg");
@@ -197,12 +199,13 @@ input.error {
 /* Footer */
 
 .footer {
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
   margin-top: 50px;
+  padding: 20px;
   font-weight: bold;
 }
 

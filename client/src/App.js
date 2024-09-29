@@ -25,8 +25,8 @@ function App() {
             element={!user ? <SignUp /> : <Navigate to="/workouts" />}
           ></Route>
         </Routes>
-        <Footer />
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }

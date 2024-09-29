@@ -23,10 +23,20 @@ header {
 header .container {
   /* max-width: 1400px; */
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.logged-in {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.logged-in span {
+  margin-bottom: 10px;
 }
 
 .fitTrack {
@@ -236,20 +246,26 @@ input.error {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .logged-in {
+    flex-direction: column;
+  }
+  .logged-in span {
+    margin-bottom: 6px
+  }
 }
 
 @media (max-width: 420px) {
   .fitTrack,
   nav a {
-    font-size: .9rem;
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 380px) {
   .fitTrack,
   .container,
   nav a {
-    font-size: .8rem;
+    font-size: 1rem;
     margin-left: 4px;
     padding: 1px
   }

@@ -13,7 +13,7 @@ const Navbar = () => {
     <motion.header
       initial={{ y: -250 }}
       animate={{ y: -10 }}
-      transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+      transition={{ delay: 0.1, type: "spring", stiffness: 40 }}
     >
       <div className="container">
         <Link to="/">

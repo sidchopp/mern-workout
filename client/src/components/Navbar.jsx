@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { useLogOut, useAuthContext } from "../hooks";
 import { Dumbbell } from "../icons";
 
@@ -9,7 +10,11 @@ const Navbar = () => {
   const handleClick = () => logOut();
 
   return (
-    <header>
+    <motion.header
+      initial={{ y: -250 }}
+      animate={{ y: -10 }}
+      transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+    >
       <div className="container">
         <Link to="/">
           <h2 className="fitTrack">
@@ -32,7 +37,7 @@ const Navbar = () => {
           )}
         </nav>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

@@ -14,7 +14,7 @@ function Logo() {
   );
 }
 
-export const NewFooter = ({ title = "", url = "" }) => {
+const NewFooter = ({ title = "", url = "" }) => {
   return (
     <footer>
       <a href="https://www.framer.com/motion/" target="_blank" rel="noreferrer">
@@ -30,3 +30,5 @@ export const NewFooter = ({ title = "", url = "" }) => {
     </footer>
   );
 };
+
+export { NewFooter };

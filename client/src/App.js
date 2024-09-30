@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks";
 import { Home, Workouts, LogIn, SignUp } from "./pages";
-import { Navbar, Footer } from "./components";
-import { NewFooter } from "./components/NewFooter";
+import { AnimatedPage, Navbar, Footer, NewFooter } from "./components";
 
 function App() {
   const { user } = useAuthContext();
@@ -15,15 +14,45 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route
             path="/workouts"
-            element={user ? <Workouts /> : <Navigate to="/login" />}
+            element={
+              user ? (
+                <AnimatedPage>
+                  <Workouts />
+                </AnimatedPage>
+              ) : (
+                <AnimatedPage>
+                  <Navigate to="/login" />
+                </AnimatedPage>
+              )
+            }
           ></Route>
           <Route
             path="/login"
-            element={!user ? <LogIn /> : <Navigate to="/workouts" />}
+            element={
+              !user ? (
+                <AnimatedPage>
+                  <LogIn />
+                </AnimatedPage>
+              ) : (
+                <AnimatedPage>
+                  <Navigate to="/workouts" />
+                </AnimatedPage>
+              )
+            }
           ></Route>
           <Route
             path="/signup"
-            element={!user ? <SignUp /> : <Navigate to="/workouts" />}
+            element={
+              !user ? (
+                <AnimatedPage>
+                  <SignUp />
+                </AnimatedPage>
+              ) : (
+                <AnimatedPage>
+                  <Navigate to="/workouts" />
+                </AnimatedPage>
+              )
+            }
           ></Route>
         </Routes>
       </div>

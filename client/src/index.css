@@ -269,3 +269,39 @@ input.error {
     padding: 1px
   }
 }
+
+
+/* New footer */
+footer {
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px dotted var(--accent);
+  background-color: transparent;
+  background-image: radial-gradient(circle at 50% 50%,
+      var(--background) 20%,
+      #fffd 20.5%,
+      #fffd 49.5%,
+      var(--background) 50%);
+
+  background-size: 15px 15px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  font-size: 14px;
+  line-height: 14px;
+}
+
+footer svg {
+  margin-right: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--accent);
+}

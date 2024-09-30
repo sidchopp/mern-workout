@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks";
 import { Home, Workouts, LogIn, SignUp } from "./pages";
 import { Navbar, Footer } from "./components";
+import { NewFooter } from "./components/NewFooter";
 
 function App() {
   const { user } = useAuthContext();
@@ -26,7 +27,8 @@ function App() {
           ></Route>
         </Routes>
       </div>
-      <Footer />
+      {/* <Footer /> */}
+      <NewFooter />
     </BrowserRouter>
   );
 }

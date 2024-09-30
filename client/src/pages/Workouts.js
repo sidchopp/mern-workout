@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 import { WorkoutDetails, WorkoutForm } from "../components";
 import { useWorkoutsContext, useAuthContext } from "../hooks";
 import { URL } from "../config";
@@ -36,7 +37,12 @@ const Workouts = () => {
   }, [dispatch, user]);
 
   return (
-    <div className="home">
+    <motion.div
+      className="home"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
       <div className="workouts">
         {workouts ? (
           workouts.map((workout) => (
@@ -47,7 +53,7 @@ const Workouts = () => {
         )}
       </div>
       <WorkoutForm />
-    </div>
+    </motion.div>
   );
 };
 

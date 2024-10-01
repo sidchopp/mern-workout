@@ -31,7 +31,10 @@ const LogIn = () => {
       {error && <div className="error">{error}</div>}
       <p>
         <span style={{ paddingRight: "10px" }}>Not a member?</span>
-        <Link to="/signup" style={{ color: "white" }}>
+        <Link
+          to="/signup"
+          style={{ color: "white", fontWeight: "bold", textDecoration: "none" }}
+        >
           Sign Up
         </Link>
       </p>

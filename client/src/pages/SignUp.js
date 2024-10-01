@@ -29,9 +29,12 @@ const SignUp = () => {
       ></input>
       <button disabled={isLoading}>Sign Up</button>
       {error && <div className="error">{error}</div>}
-      <p style={{ padding: "2px 0" }}>
+      <p>
         <span style={{ paddingRight: "10px" }}>Already registered?</span>
-        <Link to="/login" style={{ color: "white" }}>
+        <Link
+          to="/login"
+          style={{ color: "white", fontWeight: "bold", textDecoration: "none" }}
+        >
           Log In
         </Link>
       </p>

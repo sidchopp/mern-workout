@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSignUp } from "../hooks";
 
 const SignUp = () => {
@@ -28,6 +29,12 @@ const SignUp = () => {
       ></input>
       <button disabled={isLoading}>Sign Up</button>
       {error && <div className="error">{error}</div>}
+      <p style={{ padding: "2px 0" }}>
+        <span style={{ paddingRight: "10px" }}>Already registered?</span>
+        <Link to="/login" style={{ color: "white" }}>
+          Log In
+        </Link>
+      </p>
     </form>
   );
 };

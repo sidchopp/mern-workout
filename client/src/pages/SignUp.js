@@ -30,13 +30,8 @@ const SignUp = () => {
       <button disabled={isLoading}>Sign Up</button>
       {error && <div className="error">{error}</div>}
       <p>
-        <span style={{ paddingRight: "10px" }}>Already registered?</span>
-        <Link
-          to="/login"
-          style={{ color: "white", fontWeight: "bold", textDecoration: "none" }}
-        >
-          Log In
-        </Link>
+        <span>Already registered?</span>
+        <Link to="/login">Log In</Link>
       </p>
     </form>
   );

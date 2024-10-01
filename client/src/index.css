@@ -123,6 +123,15 @@ form.login {
   /* background: #668295; */
   border-radius: 4px;
 }
+
+form span {
+  padding-right: 10px;
+}
+
+form a {
+  color: white;
+  font-weight: bold;
+}
 /* homepage */
 .home {
   display: grid;

@@ -86,6 +86,18 @@ nav a {
   border-bottom: 2px solid transparent;
 }
 
+nav button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
 nav a:hover,
 a:focus,
 a:active {
@@ -107,7 +119,7 @@ a:active {
 }
 
 .hero button {
-  background: #989898;
+  background: var(--primary);;
   border: 0;
   color: #fff;
   padding: 10px;
@@ -197,7 +209,7 @@ input {
 }
 
 form button {
-  background: #989898;
+  background: var(--primary);;
   border: 0;
   color: #fff;
   padding: 10px;
